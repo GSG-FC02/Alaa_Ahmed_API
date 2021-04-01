@@ -17,7 +17,7 @@ API
 ### main.Js
 
 
-# APP structer
+# APP structure
 firstly, select api. 
 
 Then we create html page that contain search engin and button search and give it style.
