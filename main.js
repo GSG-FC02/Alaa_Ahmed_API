@@ -2,6 +2,7 @@ const btn=document.querySelector('.search-button')
 const img_result=document.querySelector('.box-result')
 btn.addEventListener('click',function get_dog(element){
     element.preventDefault();
+   //  main.innerHTML = '';
 document.querySelectorAll('.box-result img').forEach(function(item){
      item.remove()})
 
