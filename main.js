@@ -1,23 +1,22 @@
 const btn=document.querySelector('.search-button')
 const img_result=document.querySelector('.box-result')
+const input_id=document.querySelector('.search-engine');   // there are data in search engin
+
 btn.addEventListener('click',function get_dog(element){
     element.preventDefault();
-   //  main.innerHTML = '';
-document.querySelectorAll('.box-result img').forEach(function(item){
-     item.remove()})
 
-const input_id=document.getElementsByClassName('search-engine').value;
-const link_api=`https://dog.ceo/api/breed/${input_id}/images/random&limit=1`;
+const input_value=input_id.value;                         // when you click the button git the data from search engin
+const link_api=`https://dog.ceo/api/breed/${input_value}/images/random`;
 fetch(link_api)
 .then(res => {
     return res.json(); 
  })
  .then(data => {
     const dog_img=document.createElement('img')
-    dog_img.src=`https://dog.ceo/api/breed/hound/images${data.poster_path}`
-       dog_img.alt='Dog poster'
+   //  console.log(data.message,"5")   for test
+    dog_img.src= data.message;                               //  git (message) from the console -->
+      dog_img.alt='Dog'
        img_result.appendChild(dog_img) 
     })
       .catch(err =>  console.log('error',erorr));
-
 })
